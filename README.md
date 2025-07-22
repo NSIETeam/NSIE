@@ -1,2 +1,2 @@
 # NSIE
-Natural Science and Industrial
+Natural Science and Industrial Engineering
