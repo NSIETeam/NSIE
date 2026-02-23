@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--version 1-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*导航栏风格*/
+        #navigater {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 20px;
+        }
+        
+        #navigater a {
+        margin-left: 15px;    /* 每个导航链接之间的间距 */
+        text-decoration: none;/* 去掉链接下划线*/
+        color: #333;
+        transition: color 0.2s;     
+        }
+
+        /* 关键：鼠标hover（移动上去）变灰 */
+        #navigater a:hover {
+        color: #999; /* 浅灰色（柔和不刺眼） */
+        /* 可选：加个下划线，增强交互提示 */
+        /* text-decoration: underline; */
+        }
+    </style>
+</head>
+<body>
+    <aside>
+        <header>
+            <div id="header">
+                <img src="./NSIE.png" alt="load fail" height="40">
+            </div>
+            <nav id="navigater"><!--导航栏-->
+                <a href="">Home</a>
+                <a href="">Blog</a>
+                <a href="">Tools</a>
+                <a href="">About</a>
+                <a href="">Contact</a>
+            </nav>
+        </header>
+    </aside>
+    <hr>
+    <main>
+        <main>
+        </main>
+    </main>
+</body>
+</html>

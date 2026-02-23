@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--version 1-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*导航栏风格*/
+        #navigater {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 20px;
+        }
+        
+        #navigater a {
+        margin-left: 15px;    /* 每个导航链接之间的间距 */
+        text-decoration: none;/* 去掉链接下划线*/
+        color: #333;
+        transition: color 0.2s;     
+        }
+
+        /* 关键：鼠标hover（移动上去）变灰 */
+        #navigater a:hover {
+        color: #999; /* 浅灰色（柔和不刺眼） */
+        /* 可选：加个下划线，增强交互提示 */
+        /* text-decoration: underline; */
+        }
+    </style>
+</head>
+<body>
+    <aside>
+        <header>
+            <div id="header">
+                <img src="./NSIE.png" alt="load fail" height="40">
+            </div>
+            <nav id="navigater"><!--导航栏-->
+                <a href="./Home.html" >Home</a>
+                <a href="./Blog.html">Blog</a>
+                <a href="./Tools.html">Tools</a>
+                <a href="./About.html">About</a>
+                <a href="./Contact.html">Contact</a>
+            </nav>
+        </header>
+    </aside>
+    <hr>
+    <main>
+        <main>
+            <div>
+                <h3>
+                    About NSIE:
+                </h3>
+                <div>
+                    "NSIE" is the abbreviation of "Nature Science & Industrial Engineering".
+                    NSIE is dedicated to the practice of lifelong learning.
+                </div>
+                <h3>
+                    About This Site:
+                </h3>
+                <div>
+                    This website serves as a platform for sharing personal reflections, 
+                    showcasing academic achievements, and welcoming your valuable suggestions.
+                </div>
+            </div>
+            <div style="display: flex;justify-content: flex-end;font-size: smaller;">
+                English Version
+            </div>
+            <hr>
+            <div>
+                <h3>
+                    关于 NSIE:
+                </h3>
+                <div>
+                    NSIE 是 Nature Science & Industrial Engineering 的缩写，致力于践行终身学习。
+                </div>
+                <h3>
+                    关于这个网站:
+                </h3>
+                <div>
+                    本网站用于发表一些个人感悟、展示成果并欢迎留下您的建议。
+                </div>
+            </div>
+            <div style="display: flex;justify-content: flex-end;font-size: smaller;">
+                简体中文版本
+            </div>
+            <hr>
+        </main>
+    </main>
+    <footer>
+        <h4 style="display: flex;justify-content: center;">
+            Do One Thing And Do It Well<br>
+        </h4>
+        <div style="display: flex;justify-content: center;font-size: smaller;">
+            2026©NSIETeam
+        </div>
+    </footer>
+</body>
+</html>

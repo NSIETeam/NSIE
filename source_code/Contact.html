@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--version 1-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*导航栏风格*/
+        #navigater {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 20px;
+        }
+        
+        #navigater a {
+        margin-left: 15px;    /* 每个导航链接之间的间距 */
+        text-decoration: none;/* 去掉链接下划线*/
+        color: #333;
+        transition: color 0.2s;     
+        }
+
+        /* 关键：鼠标hover（移动上去）变灰 */
+        #navigater a:hover {
+        color: #999; /* 浅灰色（柔和不刺眼） */
+        /* 可选：加个下划线，增强交互提示 */
+        /* text-decoration: underline; */
+        }
+    </style>
+</head>
+<body>
+    <aside>
+        <header>
+            <div id="header">
+                <img src="./NSIE.png" alt="load fail" height="40">
+            </div>
+            <nav id="navigater"><!--导航栏-->
+                <a href="./Home.html">Home</a>
+                <a href="./Blog.html">Blog</a>
+                <a href="./Tools.html">Tools</a>
+                <a href="./About.html">About</a>
+                <a href="./Contact.html">Contact</a>
+            </nav>
+        </header>
+    </aside>
+    <hr>
+    <main>
+        <main>
+            <div>
+                <h3>
+                    Any Quesion Or Advice ?
+                </h3>
+                <div>
+                    You can leave your words on this page.You can also contact me by other ways.<br>
+                    Email:NSIETeam@outlook.com
+                </div>
+                <div style="display: flex;justify-content: flex-end;font-size: smaller;">
+                    English Version
+                </div>
+                <hr>
+                <h3>
+                    任何问题或者建议？
+                </h3>
+                <div>
+                    你可以在此页留言。同样，您也可以通过其他方式联系我。<br>
+                    邮箱：NSIETeam@outlook.com
+                </div>
+                <div style="display: flex;justify-content: flex-end;font-size: smaller;">
+                    简体中文版本
+                </div>
+                <hr>
+            </div>
+        </main>
+        <footer>
+        <h4 style="display: flex;justify-content: center;">
+            Do One Thing And Do It Well<br>
+        </h4>
+        <div style="display: flex;justify-content: center;font-size: smaller;">
+            2026©NSIETeam
+        </div>
+    </footer>
+    </main>
+</body>
+</html>
