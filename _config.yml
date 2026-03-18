@@ -1,0 +1,50 @@
+# Site settings
+title: NSIE Team
+description: Nature Science & Industrial Engineering
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://nsieteam.cn" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Custom settings
+author: NSIE Team
+email: NSIETeam@outlook.com
+github_username: # your GitHub username
+twitter_username: # your Twitter username
+disqus:
+  shortname: # your Disqus shortname
+
+# Collections
+collections:
+  tools:
+    output: true
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "NSIE Team"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
+  - .vscode
+  - README.md
+  - docs/
