@@ -2,7 +2,7 @@
 title: NSIE Team
 description: Nature Science & Industrial Engineering
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://nsieteam.cn" # the base hostname & protocol for your site
+url: "" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
