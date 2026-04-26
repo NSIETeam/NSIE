@@ -4,6 +4,14 @@ description: Nature Science & Industrial Engineering
 baseurl: "/NSIE"
 url: "https://nsieteam.github.io"
 
+# GitHub Pages
+lsi: false
+safe: true
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+
 # Build settings
 markdown: kramdown
 theme: minima
