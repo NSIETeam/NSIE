@@ -1,8 +1,8 @@
 # Site settings
 title: NSIE Team
 description: Nature Science & Industrial Engineering
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+baseurl: "/NSIE"
+url: "https://nsieteam.github.io"
 
 # Build settings
 markdown: kramdown
@@ -10,6 +10,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Custom settings
 author: NSIE Team
