@@ -3,6 +3,7 @@ import type { CollectionEntry } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
 import Container from '../components/ui/Container.astro';
 import Badge from '../components/ui/Badge.astro';
+import { href } from '../lib/constants';
 import CommentSection from '../components/blog/CommentSection.astro';
 import { getCollection } from 'astro:content';
 
@@ -41,7 +42,7 @@ const nextPost = currentIndex > 0 ? sortedPosts[currentIndex - 1] : null;
             topic && (
               <>
                 <span aria-hidden="true">&middot;</span>
-                <a href={`/topics/${topic}`}>
+                <a href={href(`/topics/${topic}`)}>
                   <Badge text={topic} />
                 </a>
               </>
@@ -70,7 +71,7 @@ const nextPost = currentIndex > 0 ? sortedPosts[currentIndex - 1] : null;
           {
             prevPost ? (
               <a
-                href={`/blog/${prevPost.slug}`}
+                href={href(`/blog/${prevPost.slug}`)}
                 class="group text-left flex-1"
               >
                 <span class="text-xs text-[#6c757d] uppercase tracking-wider">Previous</span>
@@ -85,7 +86,7 @@ const nextPost = currentIndex > 0 ? sortedPosts[currentIndex - 1] : null;
           {
             nextPost ? (
               <a
-                href={`/blog/${nextPost.slug}`}
+                href={href(`/blog/${nextPost.slug}`)}
                 class="group text-right flex-1"
               >
                 <span class="text-xs text-[#6c757d] uppercase tracking-wider">Next</span>

@@ -4,6 +4,6 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   site: 'https://nsieteam.github.io',
-  base: '/nsieteam-blog',
+  base: '/NSIE',
   integrations: [mdx(), tailwind()],
 });

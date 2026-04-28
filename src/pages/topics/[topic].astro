@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Container from '../../components/ui/Container.astro';
 import BlogCard from '../../components/blog/BlogCard.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { href } from '../../lib/constants';
 
 export async function getStaticPaths() {
   const topics = ['research', 'engineering', 'notes', 'news'];
@@ -27,7 +28,7 @@ const allTags = [...new Set(filteredPosts.flatMap(p => p.data.tags))];
   <section class="pt-28 pb-16 md:pt-36 md:pb-24">
     <div class="mx-auto max-w-6xl px-6 lg:px-8">
       <a
-        href="/blog/"
+        href={href('/blog/')}
         class="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-[#b31b1b] transition-colors mb-10"
       >
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/></svg>

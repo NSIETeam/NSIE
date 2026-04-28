@@ -1,9 +1,13 @@
+---
+import { href } from '../../lib/constants';
+---
+
 <header class="sticky top-0 z-50 bg-[#1a1a2e]/95 backdrop-blur-md border-b border-white/5">
   <input type="checkbox" id="nav-toggle" class="peer sr-only" />
 
   <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 lg:px-8">
     <a
-      href="/"
+      href={href('/')}
       class="font-serif text-xl text-white tracking-tight hover:text-white/90 transition-colors"
     >
       <span class="font-semibold">NSIE</span><span class="font-normal text-white/60">Team</span>
@@ -11,7 +15,7 @@
 
     <nav class="hidden md:flex items-center gap-1">
       <a
-        href="/blog"
+        href={href('/blog')}
         class="px-3 py-2 font-sans text-sm tracking-wide text-white/70 hover:text-white rounded-md hover:bg-white/5 transition-all"
       >
         Blog
@@ -26,7 +30,7 @@
           <div class="w-44 rounded-xl border border-white/10 bg-[#1a1a2e]/98 backdrop-blur-xl px-2 py-2 shadow-2xl shadow-black/40">
             {['engineering', 'research', 'notes', 'news'].map((t) => (
               <a
-                href={`/topics/${t}`}
+                href={href(`/topics/${t}`)}
                 class="block px-3 py-2 font-sans text-sm tracking-wide text-white/70 hover:text-white rounded-lg hover:bg-white/5 transition-all capitalize"
               >
                 {t}
@@ -38,7 +42,7 @@
 
       {['about', 'submit'].map((page) => (
         <a
-          href={`/${page}`}
+          href={href(`/${page}`)}
           class="px-3 py-2 font-sans text-sm tracking-wide text-white/70 hover:text-white rounded-md hover:bg-white/5 transition-all capitalize"
         >
           {page === 'submit' ? 'Submit' : 'About'}
@@ -56,12 +60,12 @@
   </div>
 
   <nav class="hidden flex-col gap-1 bg-[#1a1a2e] px-6 pb-6 pt-2 peer-checked:flex md:hidden border-t border-white/5">
-    <a href="/blog" class="py-2 font-sans text-sm tracking-wide text-white/80">Blog</a>
+    <a href={href('/blog')} class="py-2 font-sans text-sm tracking-wide text-white/80">Blog</a>
     <span class="pt-2 pb-1 font-sans text-xs font-semibold tracking-widest text-white/30 uppercase">Topics</span>
     {['engineering', 'research', 'notes', 'news'].map((t) => (
-      <a href={`/topics/${t}`} class="pl-3 py-1.5 font-sans text-sm text-white/70 capitalize">{t}</a>
+      <a href={href(`/topics/${t}`)} class="pl-3 py-1.5 font-sans text-sm text-white/70 capitalize">{t}</a>
     ))}
-    <a href="/about" class="pt-2 pb-1.5 font-sans text-sm tracking-wide text-white/80">About</a>
-    <a href="/submit" class="py-1.5 font-sans text-sm tracking-wide text-white/80">Submit a Post</a>
+    <a href={href('/about')} class="pt-2 pb-1.5 font-sans text-sm tracking-wide text-white/80">About</a>
+    <a href={href('/submit')} class="py-1.5 font-sans text-sm tracking-wide text-white/80">Submit a Post</a>
   </nav>
 </header>
