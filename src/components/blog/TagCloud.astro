@@ -1,0 +1,18 @@
+---
+import Badge from '../Badge.astro';
+
+interface Props {
+  tags: string[];
+  activeTag?: string;
+}
+
+const { tags, activeTag } = Astro.props;
+---
+
+<div class="flex flex-wrap gap-2">
+  {tags.map((tag) => (
+    <a href={`/blog/?tag=${tag}`}>
+      <Badge text={tag} variant={activeTag === tag ? 'accent' : 'default'} />
+    </a>
+  ))}
+</div>

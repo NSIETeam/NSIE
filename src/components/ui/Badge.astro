@@ -1,0 +1,28 @@
+---
+interface Props {
+  text: string;
+  href?: string;
+  variant?: 'default' | 'accent';
+}
+
+const { text, href, variant = 'default' } = Astro.props;
+
+const defaultClasses =
+  'bg-[#f8f9fa] text-[#6c757d] text-xs px-2.5 py-0.5 rounded-full border inline-block';
+const accentClasses =
+  'bg-accent/10 text-accent text-xs px-2.5 py-0.5 rounded-full border border-accent/20 inline-block';
+const hoverClasses = 'hover:bg-accent/20 transition-colors';
+---
+
+{href ? (
+  <a
+    href={href}
+    class={variant === 'accent' ? `${accentClasses} ${hoverClasses}` : `${defaultClasses} ${hoverClasses}`}
+  >
+    {text}
+  </a>
+) : (
+  <span class={variant === 'accent' ? accentClasses : defaultClasses}>
+    {text}
+  </span>
+)}

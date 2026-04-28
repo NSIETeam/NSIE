@@ -1,0 +1,67 @@
+---
+import { getCollection } from 'astro:content';
+import Container from '../../components/ui/Container.astro';
+import BlogCard from '../../components/blog/BlogCard.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const topics = ['research', 'engineering', 'notes', 'news'];
+  return topics.map((topic) => ({
+    params: { topic },
+  }));
+}
+
+const { topic } = Astro.params;
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const filteredPosts = allPosts
+  .filter((post) => post.data.topic === topic)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const capitalizedTopic = topic.charAt(0).toUpperCase() + topic.slice(1);
+const topicCount = filteredPosts.length;
+const allTags = [...new Set(filteredPosts.flatMap(p => p.data.tags))];
+---
+
+<BaseLayout title={`${capitalizedTopic} Posts`} description={`Blog posts about ${topic}.`}>
+  <section class="pt-28 pb-16 md:pt-36 md:pb-24">
+    <div class="mx-auto max-w-6xl px-6 lg:px-8">
+      <a
+        href="/blog/"
+        class="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-[#b31b1b] transition-colors mb-10"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/></svg>
+        Back to all posts
+      </a>
+
+      <div class="max-w-4xl mb-12">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="h-px w-8 bg-[#b31b1b]" />
+          <span class="font-sans text-xs font-semibold tracking-widest text-[#b31b1b] uppercase">Topic</span>
+        </div>
+        <h1 class="font-serif text-4xl md:text-5xl tracking-tight text-[#212529] mb-4 capitalize">
+          {capitalizedTopic}
+        </h1>
+        <p class="text-gray-500 max-w-xl">
+          {topicCount} {topicCount === 1 ? 'article' : 'articles'} in this topic.
+          {allTags.length > 0 ? ` Tagged: ${allTags.slice(0, 6).join(', ')}.` : ''}
+        </p>
+      </div>
+
+      {
+        filteredPosts.length === 0 ? (
+          <div class="text-center py-20">
+            <p class="text-gray-400 text-lg">No posts found in this topic yet.</p>
+            <p class="text-gray-300 text-sm mt-2">Browse other topics or check back soon.</p>
+          </div>
+        ) : (
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {filteredPosts.map((post) => (
+              <BlogCard post={post} />
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </section>
+</BaseLayout>

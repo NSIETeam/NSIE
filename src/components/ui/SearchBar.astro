@@ -1,0 +1,14 @@
+---
+interface Props {
+  placeholder?: string;
+}
+
+const { placeholder = 'Search articles...' } = Astro.props;
+---
+<form class="w-full max-w-md" onsubmit="return false;">
+  <input
+    type="search"
+    placeholder={placeholder}
+    class="w-full rounded border border-[#dee2e6] px-4 py-2 font-sans text-sm text-[#212529] placeholder:text-[#6c757d] focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent/20"
+  />
+</form>

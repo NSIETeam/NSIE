@@ -1,0 +1,12 @@
+---
+interface Props {
+  as?: string;
+  class?: string;
+  wide?: boolean;
+}
+
+const { as: Tag = 'div', class: className = '', wide = false } = Astro.props;
+---
+<Tag class:list={[wide ? 'max-w-6xl' : 'max-w-3xl', 'mx-auto', 'px-4', className]}>
+  <slot />
+</Tag>

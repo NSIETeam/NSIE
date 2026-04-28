@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '../components/ui/Container.astro';
+---
+
+<BaseLayout title="Submit a Post" description="How to submit a post to the NSIETeam Blog.">
+  <section class="pt-24 pb-16 md:pt-32 md:pb-20">
+    <Container>
+      <div class="max-w-readable">
+        <h1 class="font-serif text-4xl md:text-5xl tracking-tight text-[#212529] mb-8">
+          Submit a Post
+        </h1>
+
+        <div class="prose prose-slate max-w-none text-[#212529] space-y-6 leading-relaxed">
+          <p class="text-lg">
+            We welcome contributions from team members and collaborators. The
+            submission process uses GitHub Issues to keep things transparent and
+            trackable.
+          </p>
+
+          <h2 class="font-serif text-2xl text-[#212529] mt-10 mb-4">Submission Workflow</h2>
+
+          <ol class="list-decimal list-inside space-y-4 text-[#212529]">
+            <li>
+              <strong>Go to the GitHub repository</strong> &mdash; Navigate to the
+              NSIETeam Blog repository on GitHub.
+            </li>
+            <li>
+              <strong>Open a new Issue using the "Blog Post" template</strong> &mdash;
+              Select the "Blog Post" issue template to get started with the correct
+              format.
+            </li>
+            <li>
+              <strong>Fill in the required fields</strong> &mdash; Provide the post
+              title, a short description, relevant tags, and the topic category
+              (Research, Engineering, Notes, or News).
+            </li>
+            <li>
+              <strong>Write the content in Markdown</strong> &mdash; Compose the
+              body of your post using standard Markdown syntax. You may include
+              code blocks, headings, lists, and links.
+            </li>
+            <li>
+              <strong>Submit the issue for review</strong> &mdash; Once submitted,
+              the editorial team will review your post for clarity, accuracy, and
+              alignment with the blog's standards.
+            </li>
+            <li>
+              <strong>Publication</strong> &mdash; After approval, your post will
+              be published as a blog post on the NSIETeam Blog.
+            </li>
+          </ol>
+
+          <div class="mt-10">
+            <a
+              href="https://github.com/nsieteam/nsieteam-blog/issues/new"
+              class="inline-flex items-center px-6 py-3 bg-[#b31b1b] text-white font-medium rounded-lg hover:bg-[#8b0000] transition-colors duration-200"
+            >
+              Open GitHub Issue
+            </a>
+          </div>
+
+          <p class="mt-8 text-[#6c757d] text-sm">
+            If you have questions about the submission process, please reach out
+            to the editorial team through the repository discussions or internal
+            channels.
+          </p>
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>

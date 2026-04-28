@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '../components/ui/Container.astro';
+---
+
+<BaseLayout title="About">
+  <section class="pt-28 pb-16 md:pt-36 md:pb-24">
+    <div class="mx-auto max-w-3xl px-6 lg:px-8">
+      <div class="max-w-4xl mb-12">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="h-px w-8 bg-[#b31b1b]" />
+          <span class="font-sans text-xs font-semibold tracking-widest text-[#b31b1b] uppercase">About</span>
+        </div>
+        <h1 class="font-serif text-4xl md:text-5xl tracking-tight text-[#212529] mb-4">
+          About NSIETeam
+        </h1>
+      </div>
+
+      <div class="space-y-6 leading-relaxed text-[#212529]">
+        <p class="text-lg text-gray-600">
+          NSIETeam is a research group focused on networked systems, intelligent
+          infrastructure, and emerging computing paradigms. Our work spans
+          distributed systems, artificial intelligence, and software engineering,
+          with an emphasis on building practical systems that advance both
+          theoretical understanding and real-world application.
+        </p>
+
+        <p>
+          The team brings together researchers and engineers with diverse
+          backgrounds in computer science, electrical engineering, and applied
+          mathematics. Our interests include but are not limited to: distributed
+          computing architectures, machine learning systems, formal verification,
+          operating systems, and network protocol design. We value rigorous
+          methodology, reproducible research, and open collaboration with the
+          broader academic and engineering communities.
+        </p>
+
+        <p>
+          This blog serves as a public notebook for the team. We publish research
+          summaries, technical deep-dives, engineering notes, and reflections on
+          the craft of building systems. The content here is intended for
+          researchers, practicing engineers, and anyone with a serious interest
+          in how computing systems are designed, built, and reasoned about. We
+          aim for clarity, precision, and intellectual honesty in everything we
+          publish.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,19 @@
+{
+  "name": "nsieteam-blog",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.2.6",
+    "@astrojs/tailwind": "^5.1.5",
+    "@phosphor-icons/web": "^2.1.1",
+    "astro": "^5.14.1",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3"
+  }
+}

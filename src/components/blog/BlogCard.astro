@@ -1,0 +1,50 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Badge from '../ui/Badge.astro';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+const { post } = Astro.props;
+const { title, date, description, topic, tags } = post.data;
+---
+
+<a
+  href={`/blog/${post.slug}`}
+  class="group block bg-white rounded-xl border border-gray-100 p-6 hover:border-[#b31b1b]/20 hover:shadow-lg hover:shadow-gray-200/40 transition-all duration-300"
+>
+  <div class="flex flex-wrap items-center gap-2.5 text-xs text-gray-400 mb-3">
+    <time datetime={date.toISOString()}>{formatDate(date)}</time>
+    <span class="w-1 h-1 rounded-full bg-gray-300" />
+    {topic && <Badge text={topic} />}
+  </div>
+
+  <h3 class="font-serif text-xl text-[#212529] group-hover:text-[#b31b1b] transition-colors mb-2.5">
+    {title}
+  </h3>
+
+  {
+    description && (
+      <p class="text-sm text-gray-500 leading-relaxed line-clamp-2 mb-4">
+        {description}
+      </p>
+    )
+  }
+
+  {
+    tags && tags.length > 0 && (
+      <div class="flex flex-wrap gap-1.5 pt-1">
+        {tags.map((tag: string) => (
+          <span class="text-xs text-gray-400 bg-gray-50 px-2 py-0.5 rounded-md border border-gray-100">
+            {tag}
+          </span>
+        ))}
+      </div>
+    )
+  }
+</a>
